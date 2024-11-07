@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 import '../providers/assessment_provider.dart';
 import '../checks/emergency_assessment_page.dart';
 import '../models/assessment_progress.dart';
 import '../widgets/custom_app_bar.dart';
-import '../widgets/location_widget.dart';
-import '../widgets/assessment_summary_card.dart';
+import '../widgets/sliding_location_widget.dart';
 import '../constants/colors.dart';
 import '../screens/guidance_screen.dart';
 import '../screens/resources_screen.dart';
-import '../widgets/sliding_location_widget.dart';
+import '../screens/nearest_hospitals_screen.dart';
+import '../widgets/assessment_summary_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,15 +24,11 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: const EdgeInsets.only(
-              left: 16.0, 
-              right: 16.0, 
-              top: 16.0,
-              bottom: 80.0,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -44,13 +41,13 @@ class HomeScreen extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Colors.redAccent,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    elevation: 2,
+                    elevation: 4,
                   ),
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -59,6 +56,42 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(width: 12),
                       Text(
                         'Start Emergency Assessment',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 16),
+
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NearestHospitalsScreen(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.medicalGreen,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    elevation: 4,
+                  ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.local_hospital, size: 24),
+                      SizedBox(width: 12),
+                      Text(
+                        'Find Nearest Hospitals',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -77,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                     }
                     return Theme(
                       data: Theme.of(context).copyWith(
-                        dividerColor: Colors.transparent,  
+                        dividerColor: Colors.transparent,
                       ),
                       child: ExpansionTile(
                         title: const Text(
@@ -99,12 +132,12 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          
+
           const SlidingLocationWidget(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,  
+        currentIndex: 0,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

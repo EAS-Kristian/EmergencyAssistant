@@ -29,18 +29,28 @@ class _DamageCheckPageState extends State<DamageCheckPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Check for Injuries',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: const [
+                      Icon(Icons.healing, color: Colors.redAccent, size: 28),
+                      SizedBox(width: 8),
+                      Text(
+                        'Check for Injuries',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 16),
                   ...widget.progress.damageChecks.entries.map((region) {
                     return Card(
-                      elevation: 2,
+                      elevation: 3,
                       margin: const EdgeInsets.only(bottom: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -49,15 +59,22 @@ class _DamageCheckPageState extends State<DamageCheckPage> {
                             child: Text(
                               region.key,
                               style: const TextStyle(
-                                fontSize: 18,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.black87,
                               ),
                             ),
                           ),
-                          const Divider(height: 1),
+                          const Divider(height: 1, thickness: 1),
                           ...region.value.entries.map((injury) {
                             return CheckboxListTile(
-                              title: Text(injury.key),
+                              title: Text(
+                                injury.key,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black54,
+                                ),
+                              ),
                               value: injury.value,
                               onChanged: (bool? value) {
                                 setState(() {
@@ -66,6 +83,7 @@ class _DamageCheckPageState extends State<DamageCheckPage> {
                               },
                               activeColor: const Color(0xFF00AC83),
                               dense: true,
+                              controlAffinity: ListTileControlAffinity.leading,
                             );
                           }).toList(),
                           const SizedBox(height: 8),
@@ -81,7 +99,11 @@ class _DamageCheckPageState extends State<DamageCheckPage> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF00AC83),
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        elevation: 4,
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -93,7 +115,13 @@ class _DamageCheckPageState extends State<DamageCheckPage> {
                           ),
                         );
                       },
-                      child: const Text('Next: Check Environment'),
+                      child: const Text(
+                        'Next: Check Environment',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ],

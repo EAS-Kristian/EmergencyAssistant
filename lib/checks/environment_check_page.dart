@@ -24,19 +24,25 @@ class _EnvironmentCheckPageState extends State<EnvironmentCheckPage> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const CustomAppBar(title: 'Environment Protection'),
+          const CustomAppBar(title: 'Environment'),
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Environmental Protection',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: const [
+                      Icon(Icons.eco, color: Colors.green, size: 28),
+                      SizedBox(width: 8),
+                      Text(
+                        'Environment',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 10),
                   ...widget.progress.environmentChecks.entries.map((item) {

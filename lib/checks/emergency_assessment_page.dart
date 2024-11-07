@@ -29,12 +29,18 @@ class _EmergencyAssessmentPageState extends State<EmergencyAssessmentPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Is there any current Danger?',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: const [
+                      Icon(Icons.warning, color: Colors.redAccent, size: 28),
+                      SizedBox(width: 8),
+                      Text(
+                        'Is there any current Danger?',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
                   Card(

@@ -29,12 +29,18 @@ class _BreathingCheckPageState extends State<BreathingCheckPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Check Breathing Rate',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: const [
+                      Icon(Icons.air, color: Colors.blueAccent, size: 28),
+                      SizedBox(width: 8),
+                      Text(
+                        'Check Breathing Rate',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 10),
                   _buildBreathingOption('Normal (12-20)'),

@@ -29,12 +29,18 @@ class _CatastrophicBleedPageState extends State<CatastrophicBleedPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Check for Catastrophic Bleeding',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: const [
+                      Icon(Icons.bloodtype, color: Colors.redAccent, size: 28),
+                      SizedBox(width: 8),
+                      Text(
+                        'Check for Catastrophic Bleeding',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 20),
                   Card(

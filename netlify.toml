@@ -1,0 +1,11 @@
+[build]
+  command = "flutter build web"
+  publish = "build/web"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  FLUTTER_VERSION = "stable" 

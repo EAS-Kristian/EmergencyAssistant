@@ -20,14 +20,50 @@ class _SlidingLocationWidgetState extends State<SlidingLocationWidget> {
   @override
   void initState() {
     super.initState();
+    print('SlidingLocationWidget initialized');
     _getLocation();
   }
 
+  Future<void> _resetAndRequestPermission() async {
+    print('Resetting location permissions...');
+    
+    await Geolocator.openLocationSettings();
+    await Future.delayed(const Duration(seconds: 2));
+    await _getLocation();
+  }
+
   Future<void> _getLocation() async {
+    print('Starting location fetch...');
     try {
+      final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      print('Location service enabled: $serviceEnabled');
+      
+      if (!serviceEnabled) {
+        print('Location services disabled');
+        await Geolocator.openLocationSettings();
+        return;
+      }
+
+      LocationPermission permission = await Geolocator.checkPermission();
+      print('Current permission status: $permission');
+
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+        print('New permission status: $permission');
+      }
+
+      if (permission == LocationPermission.deniedForever) {
+        print('Permission permanently denied');
+        await Geolocator.openAppSettings();
+        return;
+      }
+
+      print('Requesting position...');
       final position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high
       );
+      
+      print('Position received: ${position.latitude}, ${position.longitude}');
       
       setState(() {
         _currentPosition = position;
@@ -97,7 +133,7 @@ class _SlidingLocationWidgetState extends State<SlidingLocationWidget> {
                         color: AppColors.medicalGreen,
                         size: 20,
                       ),
-                      onPressed: _getLocation,
+                      onPressed: _resetAndRequestPermission,
                       padding: EdgeInsets.zero,
                       constraints: const BoxConstraints(),
                     ),

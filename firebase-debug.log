@@ -1,0 +1,95 @@
+[debug] [2024-11-11T08:52:12.793Z] ----------------------------------------------------------------------
+[debug] [2024-11-11T08:52:12.795Z] Command:       /opt/homebrew/Cellar/node/23.1.0_1/bin/node /opt/homebrew/bin/firebase projects:create firstaid-app
+[debug] [2024-11-11T08:52:12.795Z] CLI Version:   13.24.2
+[debug] [2024-11-11T08:52:12.795Z] Platform:      darwin
+[debug] [2024-11-11T08:52:12.795Z] Node Version:  v23.1.0
+[debug] [2024-11-11T08:52:12.795Z] Time:          Mon Nov 11 2024 08:52:12 GMT+0000 (Greenwich Mean Time)
+[debug] [2024-11-11T08:52:12.795Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-11T08:52:12.799Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-11T08:52:12.799Z] > authorizing via signed-in user (kristian@enterpriseautomation.co.uk)
+[debug] [2024-11-11T08:52:36.914Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:52:36.914Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:52:36.914Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-11T08:52:36.914Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"firstaid-app","name":"firstaid-app"}
+[debug] [2024-11-11T08:52:37.220Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 409
+[debug] [2024-11-11T08:52:37.220Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":409,"message":"Requested entity already exists","status":"ALREADY_EXISTS"}}
+[debug] [2024-11-11T08:52:37.330Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 409, Requested entity already exists
+    at responseToError (/opt/homebrew/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to create project because there is already a project with ID firstaid-app. Please try again with a unique project ID.
+[debug] [2024-11-11T08:52:54.879Z] ----------------------------------------------------------------------
+[debug] [2024-11-11T08:52:54.881Z] Command:       /opt/homebrew/Cellar/node/23.1.0_1/bin/node /opt/homebrew/bin/firebase projects:create firstaid-app
+[debug] [2024-11-11T08:52:54.881Z] CLI Version:   13.24.2
+[debug] [2024-11-11T08:52:54.881Z] Platform:      darwin
+[debug] [2024-11-11T08:52:54.881Z] Node Version:  v23.1.0
+[debug] [2024-11-11T08:52:54.881Z] Time:          Mon Nov 11 2024 08:52:54 GMT+0000 (Greenwich Mean Time)
+[debug] [2024-11-11T08:52:54.881Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-11T08:52:54.885Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-11T08:52:54.885Z] > authorizing via signed-in user (kristian@enterpriseautomation.co.uk)
+[debug] [2024-11-11T08:52:58.963Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:52:58.963Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:52:58.963Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-11T08:52:58.963Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"firstaid-app","name":"1222"}
+[debug] [2024-11-11T08:52:59.210Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 409
+[debug] [2024-11-11T08:52:59.211Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":409,"message":"Requested entity already exists","status":"ALREADY_EXISTS"}}
+[debug] [2024-11-11T08:52:59.301Z] FirebaseError: Request to https://cloudresourcemanager.googleapis.com/v1/projects had HTTP Error: 409, Requested entity already exists
+    at responseToError (/opt/homebrew/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to create project because there is already a project with ID firstaid-app. Please try again with a unique project ID.
+[debug] [2024-11-11T08:53:19.585Z] ----------------------------------------------------------------------
+[debug] [2024-11-11T08:53:19.587Z] Command:       /opt/homebrew/Cellar/node/23.1.0_1/bin/node /opt/homebrew/bin/firebase projects:create emergency-assessment-app
+[debug] [2024-11-11T08:53:19.587Z] CLI Version:   13.24.2
+[debug] [2024-11-11T08:53:19.587Z] Platform:      darwin
+[debug] [2024-11-11T08:53:19.587Z] Node Version:  v23.1.0
+[debug] [2024-11-11T08:53:19.588Z] Time:          Mon Nov 11 2024 08:53:19 GMT+0000 (Greenwich Mean Time)
+[debug] [2024-11-11T08:53:19.588Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-11T08:53:19.591Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-11T08:53:19.592Z] > authorizing via signed-in user (kristian@enterpriseautomation.co.uk)
+[debug] [2024-11-11T08:53:27.012Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:27.012Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:27.012Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-11-11T08:53:27.012Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"emergency-assessment-app","name":"8888"}
+[debug] [2024-11-11T08:53:27.801Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2024-11-11T08:53:27.801Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/cp.7475951351164938183"}
+[debug] [2024-11-11T08:53:27.802Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:27.802Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:27.802Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 [none]
+[debug] [2024-11-11T08:53:28.615Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 200
+[debug] [2024-11-11T08:53:28.615Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 {"name":"operations/cp.7475951351164938183"}
+[debug] [2024-11-11T08:53:29.117Z] [Project Creation Poller] Retrying task index 0
+[debug] [2024-11-11T08:53:29.118Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:29.118Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:29.118Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 [none]
+[debug] [2024-11-11T08:53:29.539Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 200
+[debug] [2024-11-11T08:53:29.539Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 {"name":"operations/cp.7475951351164938183"}
+[debug] [2024-11-11T08:53:30.540Z] [Project Creation Poller] Retrying task index 0
+[debug] [2024-11-11T08:53:30.540Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:30.540Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:30.540Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 [none]
+[debug] [2024-11-11T08:53:30.877Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 200
+[debug] [2024-11-11T08:53:30.878Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 {"name":"operations/cp.7475951351164938183","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true}}
+[debug] [2024-11-11T08:53:32.879Z] [Project Creation Poller] Retrying task index 0
+[debug] [2024-11-11T08:53:32.879Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:32.879Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:32.879Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 [none]
+[debug] [2024-11-11T08:53:33.220Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 200
+[debug] [2024-11-11T08:53:33.221Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.7475951351164938183 {"name":"operations/cp.7475951351164938183","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"660908712723","projectId":"emergency-assessment-app","lifecycleState":"ACTIVE","name":"8888","createTime":"2024-11-11T08:53:29.234859Z","parent":{"type":"organization","id":"266298097358"}}}
+[debug] [2024-11-11T08:53:33.221Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:33.221Z] Checked if tokens are valid: true, expires at: 1731318551008
+[debug] [2024-11-11T08:53:33.221Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/emergency-assessment-app:addFirebase [none]
+[debug] [2024-11-11T08:53:34.452Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/emergency-assessment-app:addFirebase 403
+[debug] [2024-11-11T08:53:34.453Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/emergency-assessment-app:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-11-11T08:53:34.453Z] Request to https://firebase.googleapis.com/v1beta1/projects/emergency-assessment-app:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2024-11-11T08:53:34.521Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/emergency-assessment-app:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (/opt/homebrew/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.

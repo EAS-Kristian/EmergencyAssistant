@@ -1,9 +1,8 @@
 import 'package:what3words/what3words.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class What3WordsService {
-  final api = What3WordsV3(dotenv.env['W3W_API_KEY'] ?? '');
+  final api = What3WordsV3(const String.fromEnvironment('W3W_API_KEY', defaultValue: ''));
 
   Future<bool> _checkNetworkConnection() async {
     try {

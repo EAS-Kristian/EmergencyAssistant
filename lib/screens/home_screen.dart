@@ -5,12 +5,12 @@ import '../providers/assessment_provider.dart';
 import '../checks/emergency_assessment_page.dart';
 import '../models/assessment_progress.dart';
 import '../widgets/custom_app_bar.dart';
-import '../widgets/sliding_location_widget.dart';
 import '../constants/colors.dart';
 import '../screens/guidance_screen.dart';
 import '../screens/resources_screen.dart';
 import '../screens/nearest_hospitals_screen.dart';
 import '../widgets/assessment_summary_card.dart';
+import '../widgets/shared_nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'First Aid',
+        title: 'Emergency Assistant',
       ),
       body: Stack(
         children: [
@@ -132,44 +132,9 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-
-          const SlidingLocationWidget(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.health_and_safety),
-            label: 'Guidance',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.medical_services),
-            label: 'Resources',
-          ),
-        ],
-        selectedItemColor: AppColors.medicalGreen,
-        onTap: (index) {
-          switch (index) {
-            case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const GuidanceScreen()),
-              );
-              break;
-            case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ResourcesScreen()),
-              );
-              break;
-          }
-        },
-      ),
+      bottomNavigationBar: const SharedNavBar(currentIndex: 0),
     );
   }
 }

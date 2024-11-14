@@ -32,6 +32,10 @@
 	<string>This app needs access to location to provide accurate emergency location information.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location to provide accurate emergency location information.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app needs access to speech recognition to process voice commands</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs access to microphone to process voice commands</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

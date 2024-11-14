@@ -3,9 +3,12 @@ import 'package:provider/provider.dart';
 import 'providers/assessment_provider.dart';
 import 'providers/location_provider.dart';
 import 'screens/home_screen.dart';
+import 'services/tts_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final ttsService = TTSService();
+  await ttsService.initialize();
   runApp(const FirstAidApp());
 }
 

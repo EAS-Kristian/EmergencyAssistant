@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/custom_app_bar.dart';
 import '../models/assessment_progress.dart';
 import 'circulation_check_page.dart';
+import '../services/tts_service.dart';
 
 class BreathingCheckPage extends StatefulWidget {
   final AssessmentProgress progress;
@@ -16,6 +17,14 @@ class BreathingCheckPage extends StatefulWidget {
 }
 
 class _BreathingCheckPageState extends State<BreathingCheckPage> {
+  final TTSService _tts = TTSService(); 
+
+  @override
+  void dispose() {
+    _tts.stop(); 
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,15 +39,28 @@ class _BreathingCheckPageState extends State<BreathingCheckPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
-                      Icon(Icons.air, color: Colors.blueAccent, size: 28),
-                      SizedBox(width: 8),
-                      Text(
+                    children: [
+                      const Icon(Icons.air, color: Colors.blueAccent, size: 28),
+                      const SizedBox(width: 8),
+                      const Text(
                         'Check Breathing Rate',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
+                      ),
+                      const Spacer(), 
+                      IconButton(    
+                        icon: const Icon(Icons.volume_up),
+                        color: const Color(0xFF00AC83),
+                        onPressed: () {
+                          _tts.speak(
+                            "Check the breathing rate. Normal breathing is 12 to 20 breaths per minute. "
+                            "Count the number of breaths for 15 seconds and multiply by 4. "
+                            "If they're not breathing, start CPR immediately with 30 compressions "
+                            "followed by 2 breaths.",
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -136,4 +158,4 @@ class _BreathingCheckPageState extends State<BreathingCheckPage> {
       ),
     );
   }
-} 
+}
